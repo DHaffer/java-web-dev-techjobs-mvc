@@ -30,27 +30,27 @@
     <table th:fragment="display-results" th:each="job : ${jobs}" class="job-listing">
         <tr>
             <td>ID:</td>
-            <td th:text="${job.id}"></td>
+            <td th:text="${job.id}" class="data"></td>
         </tr>
         <tr>
             <td>Name:</td>
-            <td th:text="${job.name}"></td>
+            <td th:text="${job.name}" class="data"></td>
         </tr>
         <tr>
             <td>Employer:</td>
-            <td th:text="${'Employer: ' + job.employer}"></td>
+           <td><a th:text="${job.employer}" class="data data-link" th:href="@{/list/jobs(column='employer',value=${job.employer.value})}"></a></td>
         </tr>
         <tr>
             <td>Location:</td>
-            <td th:text="${job.location}"></td>
+            <td><a th:text="${job.location}" class="data data-link" th:href="@{/list/jobs(column='location',value=${job.location.value})}"></a></td>
         </tr>
         <tr>
             <td>Position Type:</td>
-            <td th:text="${job.positionType}"></td>
+            <td><a th:text="${job.positionType}" class="data data-link" th:href="@{/list/jobs(column='positionType',value=${job.positionType.value})}"></a></td>
         </tr>
         <tr>
             <td>Skill:</td>
-            <td th:text="${job.coreCompetency}"></td>
+            <td><a th:text="${job.coreCompetency}" class="data data-link" th:href="@{/list/jobs(column='coreCompetency',value=${job.coreCompetency.value})}"></a></td>
         </tr>
     </table>
 
